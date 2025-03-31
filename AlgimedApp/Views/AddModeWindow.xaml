@@ -1,0 +1,34 @@
+﻿<Window x:Class="AlgimedApp.Views.AddModeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Add/Edit Mode" Height="250" Width="300"
+        WindowStartupLocation="CenterScreen">
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Name:" VerticalAlignment="Center" Margin="0,0,10,10"/>
+        <TextBox Grid.Row="0" Grid.Column="1" Height="25" Margin="0,0,0,10"
+                 Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" />
+
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Max Bottles:" VerticalAlignment="Center" Margin="0,0,10,10"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Height="25" Margin="0,0,0,10"
+                 Text="{Binding MaxBottleNumber, UpdateSourceTrigger=PropertyChanged}" />
+
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="Max Tips:" VerticalAlignment="Center" Margin="0,0,10,10"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Height="25" Margin="0,0,0,10"
+                 Text="{Binding MaxUsedTips, UpdateSourceTrigger=PropertyChanged}" />
+
+        <Button Grid.Row="3" Grid.ColumnSpan="2" Height="30" Content="Save"
+                Command="{Binding SaveCommand}" HorizontalAlignment="Right" Width="80"/>
+    </Grid>
+</Window>

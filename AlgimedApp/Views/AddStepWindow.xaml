@@ -1,0 +1,44 @@
+﻿<Window x:Class="AlgimedApp.Views.AddStepWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Add/Edit Step" Height="350" Width="350"
+        WindowStartupLocation="CenterScreen">
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Timer:" Margin="0,0,10,10" VerticalAlignment="Center"/>
+        <TextBox Grid.Row="0" Grid.Column="1" Height="25" Margin="0,0,0,10"
+                 Text="{Binding Timer, UpdateSourceTrigger=PropertyChanged}" />
+
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Destination:" Margin="0,0,10,10" VerticalAlignment="Center"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Height="25" Margin="0,0,0,10"
+                 Text="{Binding Destination, UpdateSourceTrigger=PropertyChanged}" />
+
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="Speed:" Margin="0,0,10,10" VerticalAlignment="Center"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Height="25" Margin="0,0,0,10"
+                 Text="{Binding Speed, UpdateSourceTrigger=PropertyChanged}" />
+
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="Type:" Margin="0,0,10,10" VerticalAlignment="Center"/>
+        <TextBox Grid.Row="3" Grid.Column="1" Height="25" Margin="0,0,0,10"
+                 Text="{Binding Type, UpdateSourceTrigger=PropertyChanged}" />
+
+        <TextBlock Grid.Row="4" Grid.Column="0" Text="Volume:" Margin="0,0,10,10" VerticalAlignment="Center"/>
+        <TextBox Grid.Row="4" Grid.Column="1" Height="25" Margin="0,0,0,10"
+                 Text="{Binding Volume, UpdateSourceTrigger=PropertyChanged}" />
+
+        <Button Grid.Row="5" Grid.ColumnSpan="2" Height="30" Content="Save"
+                Command="{Binding SaveCommand}" HorizontalAlignment="Right" Width="80"/>
+    </Grid>
+</Window>
